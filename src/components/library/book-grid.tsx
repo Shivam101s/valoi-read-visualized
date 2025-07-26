@@ -140,22 +140,22 @@ export const BookGrid = () => {
           <Card key={book.id} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-0">
               {/* Thumbnail / Video Preview */}
-              <div className="relative aspect-video bg-gradient-primary rounded-t-lg overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+              <div className="relative aspect-video bg-gradient-primary rounded-t-lg overflow-hidden group-hover:shadow-glow transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/20 group-hover:from-black/5 group-hover:to-black/10 transition-all duration-500 flex items-center justify-center">
                   <Button 
                     size="icon" 
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30"
+                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md border-white/20 shadow-glow transform group-hover:scale-110 transition-all duration-300"
                     variant="outline"
                   >
-                    <Play className="h-5 w-5 text-white fill-white" />
+                    <Play className="h-6 w-6 text-white fill-white drop-shadow-lg" />
                   </Button>
                 </div>
                 
                 {/* Progress Bar */}
                 {book.progress > 0 && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-black/20 backdrop-blur-sm">
                     <div 
-                      className="h-full bg-primary transition-all duration-300"
+                      className="h-full bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 shadow-glow"
                       style={{ width: `${book.progress}%` }}
                     />
                   </div>
@@ -164,7 +164,7 @@ export const BookGrid = () => {
                 {/* Verified Badge */}
                 {book.verified && (
                   <div className="absolute top-3 left-3">
-                    <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+                    <Badge variant="secondary" className="bg-white/10 text-white border-white/20 backdrop-blur-md shadow-soft">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       Verified
                     </Badge>
@@ -173,7 +173,7 @@ export const BookGrid = () => {
                 
                 {/* Duration */}
                 <div className="absolute top-3 right-3">
-                  <Badge variant="secondary" className="bg-black/40 text-white border-white/20">
+                  <Badge variant="secondary" className="bg-black/30 text-white border-white/10 backdrop-blur-md">
                     <Clock className="h-3 w-3 mr-1" />
                     {book.duration}
                   </Badge>
