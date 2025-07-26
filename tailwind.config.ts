@@ -97,8 +97,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'bounce-slow': 'var(--animate-bounce-slow)',
-				'pulse-glow': 'var(--animate-pulse-glow)'
+				'bounce-slow': 'bounce 3s infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
+				'float': 'float 6s ease-in-out infinite',
+				'fade-in': 'fadeIn 0.5s ease-out'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -116,11 +118,11 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
